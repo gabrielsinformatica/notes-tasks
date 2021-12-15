@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes & Tasks - Adicionar notas e listas</title>
-    <link rel="shortcut icon" href="imagens/favicon.jpg" type="image/jpg">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"><!DOCTYPE html>
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
@@ -23,7 +15,7 @@
     
     @font-face {
         font-family: "Readex Pro";
-        src: url(ReadexPro.ttf) format("truetype");
+        src: url(fonts/ReadexPro.ttf) format("truetype");
     }
     
     body {
@@ -48,83 +40,78 @@
         list-style: none;
     }
     
-    li.logo, li.nome, li.email {
+    li.logo, li.nome, li.email, li.profile {
         font-size: 24px;
     }
-    
-    #profile {
-        background-color: white;
+
+    i.usuario {
         color: black;
-        padding: 30px 0px;
-        margin: 30px 0px;
     }
-    
+
+    #add-things {
+        padding: 50px 0px;
+        background-color: white;
+    }
+
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-content: center;
-        grid-gap: 40px;
+        grid-gap: 20px;
+        margin: 30px 0px 0px 0px;
+    }
+
+    .add-note, .add-task, .add-ordered-list, .add-link {
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 2.5px 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.473);
+        text-align: center;
+        background-color: white;
+        color: black;
         margin: 0px 10px;
     }
-    
-    .icon, .infos, .change {
+
+    .input-note, .input-task, .input-list, .input-link {
         padding: 10px;
-        background-color: #B8F96B;
-        color: black;
-        border-radius: 10px;
-    }
-    
-    .infos :is(h3) {
-        margin: 10px 0px;
-        font-weight: normal;
-    }
-    
-    .icon > i.usuario {
-        background-color: #B8F96B;
-        margin: 10px 0px;
-        font-size: 130px;
-        color: black;
-    }
-    
-    .icon :is(h3) {
-        font-weight: normal;
-    }
-    
-    .btn-exit, .btn-config {
-        background-color: #e7e7e7;
-        color: black;
-        margin: 10px 0px;
-        padding: 10px 30px;
-        border: 2px solid black;
+        margin: 10px;
+        width: 200px;
+        height: 20px;
         font-size: 16px;
         font-family: "Readex Pro", Arial, Helvetica, sans-serif;
+    }
+
+    .title-add {
         font-weight: normal;
+    }
+
+    textarea {
+        padding: 10px;
+        width: 200px;
+        height: 120px;
+        font-size: 16px;
+        font-family: "Readex Pro", Arial, Helvetica, sans-serif;
+        resize: none;
+    }
+
+    .copy > p {
+        margin: 10px 0px;
+    }
+
+    .btn-add-note, .btn-add-task, .btn-add-list, .btn-add-link {
+        padding: 10px;
+        margin: 10px;
         border-radius: 10px;
+        border: 2px solid black;
+        background-color: #B8F96B;
+        font-size: 16px;
+        font-family: "Readex Pro", Arial, Helvetica, sans-serif;
         cursor: pointer;
     }
-    
-    .btn-config:hover, .btn-exit:hover {
+
+    .btn-add-note:hover, .btn-add-task:hover, .btn-add-list:hover, .btn-add-link:hover {
+        color: #B8F96B;
+        border: 2px solid #B8F96B;
         background-color: black;
-        color: #e7e7e7;
-        border: 2px solid #e7e7e7;
-    }
-    
-    .page-title {
-        margin: 20px 0px;
-    }
-    
-    .change h2 {
-        font-weight: normal;
-        margin: 10px 0px;
-    }
-    
-    form :is(.config1, .config2, .config3) {
-        width: 300px;
-        height: 10px;
-        font-size: 16px;
-        font-family: "Readex Pro", Arial, Helvetica, sans-serif;
-        padding: 10px;
-        margin: 5px 0px;
     }
         </style>
     </head>
@@ -136,11 +123,73 @@
                     <li class="logo">Notes & Tasks</li>
                     <li class="email" id="email-navbar">Email</li>
                     <li class="nome" id="nome-navbar">Nome</li>
+                    <li class="profile"><a href="perfil.html"><i class="fas fa-user-circle usuario"></i></a></li>
                 </ul>
             </nav>
         </header>
 
-        
+        <div id="add-things">
+            <h1 class="title">O que você quer adicionar?</h1>
+            <div class="grid">
+                <div class="add-note">
+                    <h3 class="title-add">Anotação de texto</h3>
+                    <input type="text" class="input-note" placeholder="Título">
+                    <br>
+                    <textarea placeholder="Anotação"></textarea>
+                    <br>
+                    <button class="btn-add-note" id="btn-add-note">Adicionar</button>
+                </div>
+                <div class="add-task">
+                    <h3 class="title-add">CheckList</h3>
+                    <input class="input-task" type="text" placeholder="Nome da tarefa">
+                    <br>
+                    <button class="btn-add-task" id="btn-add-task">Adicionar</button>
+                </div>
+                <div class="add-ordered-list">
+                    <h3 class="title-add">Lista numerada</h3>
+                    <input type="text" class="input-list" placeholder="Nome da tarefa">
+                    <br>
+                    <button class="btn-add-list" id="btn-add-list">Adicionar</button>
+                </div>
+                <div class="add-link">
+                    <h3 class="title-add">Link</h3>
+                    <input type="text" class="input-link" placeholder="Título">
+                    <br>
+                    <input type="text" class="input-link" placeholder="Link">
+                    <br>
+                    <button class="btn-add-link" id="btn-add-link">Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-things">
+            <h1 class="title">O que você adicionou:</h1>
+            <div class="grid">
+                <div class="add-note">
+                    <h3 class="title-add">Anotações de texto</h3>
+                    <div class="anotacao">
+                        <p>neste estilo:</p>
+                        <h4>Anotação 1</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut nam enim ipsum necessitatibus, soluta impedit, repellendus sint amet molestiae tempore quasi inventore aliquam? Iusto possimus animi iste temporibus repudiandae incidunt.</p>
+                        <br>
+                        <h4>Anotação 2</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptas numquam ut. Dignissimos eius reiciendis in, exercitationem enim distinctio, corrupti neque earum nisi inventore dolore cum maxime quibusdam, illum ducimus?</p>
+                    </div>
+                </div>
+                <div class="add-task">
+                    <h3 class="title-add">CheckList</h3>
+                    <p>**Opções type=check**</p>
+                </div>
+                <div class="add-ordered-list">
+                    <h3 class="title-add">Lista numerada</h3>
+                    <p>**Listas numeradas (tag ol)**</p>
+                </div>
+                <div class="add-link">
+                    <h3 class="title-add">Links</h3>
+                    <p>Exemplo: </p> <a href="https://youtube.com">YouTube</a>
+                </div>
+            </div>
+        </div>
     
         <div class="copy">
             <p>&copy; 2021 Notes & Tasks - Todos os direitos reservados</p>
