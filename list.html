@@ -15,7 +15,7 @@
     
     @font-face {
         font-family: "Readex Pro";
-        src: url(ReadexPro.ttf) format("truetype");
+        src: url(fonts/ReadexPro.ttf) format("truetype");
     }
     
     body {
@@ -112,6 +112,57 @@
         border: 2px solid #B8F96B;
         background-color: black;
     }
+
+    @media screen and (max-width: 425px) {
+        nav ul {
+            display: block;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        nav ul > li {
+            margin: 15px 0px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: auto;
+        }
+    }
+
+        @media screen and (min-width: 426px) and (max-width: 1000px) {
+            nav ul {
+                display: block;
+                justify-content: space-around;
+                list-style: none;
+            }
+
+            nav ul > li {
+                margin: 15px 0px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: auto;
+            }
+        }
+
+        @media screen and (min-width: 1001px) and (max-width: 1300px) {
+            nav ul {
+                display: flex;
+                justify-content: space-around;
+                list-style: none;
+            }
+
+            nav ul > li {
+                margin: 0px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr; 
+            }
+        }
         </style>
     </head>
     <body>
