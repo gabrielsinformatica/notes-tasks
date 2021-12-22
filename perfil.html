@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: "Readex Pro";
-    src: url(ReadexPro.ttf) format("truetype");
+    src: url(fonts/ReadexPro.ttf) format("truetype");
 }
 
 body {
@@ -117,6 +117,144 @@ form :is(.config1, .config2, .config3) {
     padding: 10px;
     margin: 5px 0px;
 }
+
+        @media screen and (max-width: 425px) {
+            nav ul {
+                display: block;
+                justify-content: space-around;
+                list-style: none;
+            }
+
+            nav ul > li {
+                margin: 15px 0px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: auto;
+                justify-content: center;
+                grid-gap: 0px;
+                margin: 10px 0px;
+            }
+
+            .icon, .infos, .change {
+                margin: 10px 30px;
+            } 
+
+            .icon > i.usuario {
+                background-color: #B8F96B;
+                margin: 10px 0px;
+                font-size: 70px;
+                color: black;
+            }
+
+            form :is(.config1, .config2, .config3) {
+                width: 200px;
+                height: 10px;
+                font-size: 16px;
+                font-family: "Readex Pro", Arial, Helvetica, sans-serif;
+            }
+
+            .btn-config {
+                padding: 10px 30px;
+            }
+
+            .btn-exit {
+                padding: 10px 30px;
+            }
+        }
+
+        @media screen and (min-width: 426px) and (max-width: 1000px) {
+            nav ul {
+                display: block;
+                justify-content: space-around;
+                list-style: none;
+            }
+
+            nav ul > li {
+                margin: 15px 0px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: auto;
+                justify-content: center;
+                grid-gap: 0px;
+                margin: 10px 0px;
+            }
+
+            .icon, .infos, .change {
+                margin: 10px;
+            } 
+
+            .icon > i.usuario {
+                background-color: #B8F96B;
+                margin: 10px 0px;
+                font-size: 70px;
+                color: black;
+            }
+
+            form :is(.config1, .config2, .config3) {
+                width: 300px;
+                height: 10px;
+                font-size: 16px;
+                font-family: "Readex Pro", Arial, Helvetica, sans-serif;
+            }
+
+            .btn-config {
+                padding: 10px 80px;
+            }
+
+            .btn-exit {
+                padding: 10px 30px;
+            }
+        }
+
+        @media screen and (min-width: 1001px) and (max-width: 1300px) {
+            nav ul {
+                display: flex;
+                justify-content: space-around;
+                list-style: none;
+            }
+
+            nav ul > li {
+                margin: 0px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                justify-content: center;
+                grid-gap: 0px;
+                margin: 10px 0px;
+            }
+
+            .icon, .infos, .change {
+                margin: 10px;
+            } 
+
+            .icon > i.usuario {
+                background-color: #B8F96B;
+                margin: 10px 0px;
+                font-size: 70px;
+                color: black;
+            }
+
+            form :is(.config1, .config2, .config3) {
+                width: 300px;
+                height: 10px;
+                font-size: 16px;
+                font-family: "Readex Pro", Arial, Helvetica, sans-serif;
+            }
+
+            .btn-config {
+                padding: 10px 80px;
+            }
+
+            .btn-exit {
+                padding: 10px 30px;
+            }
+        }
     </style>
 </head>
 <body>
